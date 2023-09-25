@@ -1,0 +1,23 @@
+1.Creer une classe Voiture
+ avec des attributs
+ - couleur
+ - vitesse maximum
+ - fabricant
+ - vitesse
+ 
+ les getter et setter
+ 
+ et des methodes accelerer et freiner
+ 
+2. Creer une classe Chien
+
+ avec des attributs
+ - race
+ - date de naissance
+ - nom
+ - niveau de faim
+ - besoin de sortir
+ 
+ les getter et setter
+ 
+ et des methodes pour promener et nourrir

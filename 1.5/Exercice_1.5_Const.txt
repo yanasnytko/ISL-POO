@@ -1,0 +1,13 @@
+Créer une classe Terasse
+avec les attributs: 
+- UNITE (constante)
+- longueur
+- largeur
+
+ajouter en plus des getter et setter une methode
+- getSurface : retourne la surface totale de la terasse avec l'unité
+
+Créez une Terasse de 7m de longueur sur 15m de largeur
+Affichez la surface de cette terasse avec son unité (m²)
+
+

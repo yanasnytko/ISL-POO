@@ -1,0 +1,23 @@
+Constructeur
+
+1. Etudiant
+
+Créez la Classe Etudiant
+
+Elle doit avoir les propriétés nom, prénom, matricule, email et année de naissance ainsi qu’un constructeur.
+
+La méthode getCoordonees() doit retourner les coordonnées complètes de l'étudiant
+
+Créez des étudiants et affichez leurs cordonnées
+
+2. Ville
+
+Créez une classe représentant une ville. 
+Elle doit avoir les propriétés nom et département et
+une méthode affichant « la ville X est dans le département Y ». 
+Créez des objets ville, affectez
+leurs propriétés, et utilisez la méthode d’affichage
+
+
+• Modifiez la classe précédente en la dotant d’un constructeur
+• Réalisez les mêmes opérations de création d’objets et d’affichage

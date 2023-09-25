@@ -1,0 +1,16 @@
+Créez une classe Pont
+
+Définir un attribut static qui contiendra le nombre de piétons qui ont traversé le pont
+
+Créez une methode de classe qui permet d'ajouter le passage du pont par un pieton
+
+Tel que :
+ Classe Pont
+ - attribut statique : nombrePieton
+ - methode : nouveauPieton
+ 
+Utilisez cette classe
+ - créer  un pont
+ - ajouter un pieton
+ - afficher le nombre de pietons qui ont traversé le pont
+

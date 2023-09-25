@@ -1,0 +1,10 @@
+1. Creer une classe age avec un attribut age
+dans la classe une methode constructeur qui prend une valeur pour l'attribut age en parametre
+et les accesseur 
+
+2. Creer une classe eleve
+attributs nom, prenom, age
+avec les accesseurs
+la fonction  set age prend un objet de type Age en parametre
+
+3. Creer un eleve et l'afficher en html

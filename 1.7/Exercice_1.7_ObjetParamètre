@@ -1,0 +1,35 @@
+Objet en paramètre
+
+Créer une classe Personnage
+Mettre les attributs suivants
+	nom
+	pv
+	force
+	
+Mettre 10 pv comme valeur par défaut
+
+Ajouter les accesseur et mutateurs et le constructeur prenant le nom et la force
+
+la force doit être comprise entre 1 et 4
+
+Ajouter une methode prendUnCoup(int x) qui diminue les pv du Personnage de x
+
+Ajouter une methode frapper qui prend un objet Personnage en parmamètre tel que:
+
+
+<?php
+class Personnage
+{
+  // …
+  public function frapper(Personnage $persoAFrapper)
+  {
+    // …
+  }
+}
+?> 
+
+Créer deux personnages et faites les se battre en utilisant la methode frapper tel que:
+
+perso1 frappe perso2 => perso2 perd x pv
+
+Tester de passer un autre objet que Personnage à la méthode frapper de Personnage
