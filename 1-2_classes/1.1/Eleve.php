@@ -21,10 +21,12 @@ class Eleve {
         $this->numero = $numero;
     }
 
-    public function getNomComplet() {
+    public function getNomComplet($majuscules = false) {
         $nom = $this->nom;
         $prenom = $this->prenom;
-
+        if($majuscules){
+            $nom = strtoupper($nom);
+        }
         return $prenom.' '.$nom;
     }
 
