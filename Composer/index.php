@@ -2,10 +2,12 @@
 require 'vendor/autoload.php';
 use Poo\ExempleComposer\Manager\PersonneManager;
 
+// connexion
 $connexion = new PDO('mysql:host=localhost;dbname=poo_php', 'root', '');
-
-$nombrePersonnes = 3;
 $personneManager = new PersonneManager($connexion);
+
+// datas pour table
+$nombrePersonnes = 3;
 $personnes = $personneManager->faker($nombrePersonnes);
 //$personneManager->createAll($personnes);
 ?>
@@ -17,7 +19,7 @@ $personnes = $personneManager->faker($nombrePersonnes);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Faker - Exercice</title>
 </head>
 
 <body>
