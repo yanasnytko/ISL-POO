@@ -11,10 +11,12 @@ class PersonneManager {
     
     private $connexion = null;
     private $faker;
+    public static $fakerStatic;
 
     public function __construct($co) {
         $this->connexion = $co;
         $this->faker = Factory::create();
+        self::$fakerStatic = Factory::create();
     }
 
     public function getConnexion(){
@@ -25,18 +27,19 @@ class PersonneManager {
     }
 
     // FAKER
-    public function faker($nombrePersonnes){
+    public static function faker($nombrePersonnes){
         $personnes = [];
-        $faker = $this->faker;
+        self::$fakerStatic = Factory::create();
+        $fakerStatic = self::$fakerStatic;
 		for ($i = 0; $i < $nombrePersonnes; $i++) {
             $datas = [];
             $personne = new Personne($datas);
-            $personne->setNom($faker->name());
-            $personne->setPrenom($faker->firstName());
-            $personne->setAdresse($faker->streetAddress());
-            $personne->setCodePostal($faker->postcode());
-            $personne->setPays($faker->country());
-            $personne->setSociete($faker->company());
+            $personne->setNom($fakerStatic->name());
+            $personne->setPrenom($fakerStatic->firstName());
+            $personne->setAdresse($fakerStatic->streetAddress());
+            $personne->setCodePostal($fakerStatic->postcode());
+            $personne->setPays($fakerStatic->country());
+            $personne->setSociete($fakerStatic->company());
 
 		    array_push($personnes, $personne);
 		}
@@ -46,19 +49,17 @@ class PersonneManager {
     // CREATE
     public function create(){
         $faker = $this->faker;
-        $datas = [];
-        $personne = new Personne($datas);
 
         $stmt = $this->getConnexion()
             ->prepare("INSERT INTO Personnes (nom, prenom, adresse, codePostal, pays, societe) 
                     VALUES (:nom, :prenom, :adresse, :codePostal, :pays, :societe)");
 
-        $stmt->bindValue(':nom', $personne->setNom($faker->name()));
-        $stmt->bindValue(':prenom', $personne->setPrenom($faker->firstName()));
-        $stmt->bindValue(':adresse', $personne->setAdresse($faker->streetAddress()));
-        $stmt->bindValue(':codePostal', $personne->setCodePostal($faker->postcode()), PDO::PARAM_INT);
-        $stmt->bindValue(':pays', $personne->setPays($faker->country()));
-        $stmt->bindValue(':societe', $personne->setSociete($faker->company()));
+        $stmt->bindValue(':nom', $faker->name());
+        $stmt->bindValue(':prenom', $faker->firstName());
+        $stmt->bindValue(':adresse', $faker->streetAddress());
+        $stmt->bindValue(':codePostal', $faker->postcode(), PDO::PARAM_INT);
+        $stmt->bindValue(':pays', $faker->country());
+        $stmt->bindValue(':societe', $faker->company());
 
         $stmt->execute();
     }
@@ -129,10 +130,10 @@ class PersonneManager {
     }
 
     // DELETE
-    public function delete(Personne $personne){
+    public function delete($id){
         $stmt= $this->getConnexion()
             ->prepare('DELETE FROM Personnes 
-                    WHERE id = ' . $personne->getId());
+                    WHERE id = ' . $id);
         $stmt->execute();
     }
 }

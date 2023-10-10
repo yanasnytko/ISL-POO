@@ -2,14 +2,15 @@
 require 'vendor/autoload.php';
 use Poo\ExempleComposer\Manager\PersonneManager;
 
+// datas pour table
+$nombrePersonnes = 3;
+$personnes = PersonneManager::faker($nombrePersonnes); // utilisation de methode static faker sans instancier PersonneManager
+//$personneManager->createAll($personnes); // Envoie dans la DB le tableau des 3 personnes créées:
+
 // connexion
 $connexion = new PDO('mysql:host=localhost;dbname=poo_php', 'root', '');
 $personneManager = new PersonneManager($connexion);
-
-// datas pour table
-$nombrePersonnes = 3;
-$personnes = $personneManager->faker($nombrePersonnes);
-//$personneManager->createAll($personnes);
+//$personneManager->create(); // envoie une personne fake dans la DB 
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +61,11 @@ $personnes = $personneManager->faker($nombrePersonnes);
     <pre>
     <?php
     var_dump($personneManager->read(2));
+    ?>
+    </pre>
+    <pre>
+    <?php
+    //var_dump($personneManager->delete(30));
     ?>
     </pre>
 </body>
