@@ -1,0 +1,19 @@
+{
+    "name": "poo/heritage",
+    "description": "Exercice Heritage pour POO",
+    "type": "project",
+    "require": {
+        "fakerphp/faker": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "Poo\\Heritage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yanasnytko",
+            "email": "yana.snytko@gmail.com"
+        }
+    ]
+}
